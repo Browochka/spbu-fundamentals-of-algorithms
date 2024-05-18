@@ -1,12 +1,11 @@
 import os
-
+from typing import Any
 import networkx as nx
 
 
 TEST_GRAPH_FILES = [
     "graph_1_wo_cycles.edgelist",
-    "graph_2_wo_cycles.edgelist",
-    "graph_3_w_cycles.edgelist",
+    "graph_2_w_cycles.edgelist",
 ]
 
 def dfs(g: nx.Graph, node: Any, visited: dict[Any]):

@@ -17,21 +17,16 @@ def cholesky(A):
 
 
 if __name__ == "__main__":
-    L_real = np.array(
+    L    = np.array(
         [
             [1.0, 0.0, 0.0],
             [4.0, 2.0, 0.0],
             [6.0, 5.0, 3.0],
         ]
     )
-    A = L_real @ L_real.T
+    A = L @ L.T
     print("A:")
     print(A)
 
-    L_new = cholesky(A)
+    L=cholesky(A)
     print("\nCholesky L:")
-    print(L_new)
-
-    A_new = L_new @ L_new.T
-    print("\n L @ L.T:")
-    print(A_new)

@@ -21,7 +21,7 @@ def dfs(g, s, t, parent) -> bool:
 
 
 def max_flow(G: nx.Graph, s: str, t: str):
-    max_flow: float = 0
+    value: float = 0
     parent=dict()
     for node in G.nodes():
         parent[node]= None
@@ -33,7 +33,7 @@ def max_flow(G: nx.Graph, s: str, t: str):
             path_flow=min(path_flow,G[current_parent][current_node]['weight'])
             current_node=current_parent
 
-        max_flow+=path_flow
+        value+=path_flow
 
         current_node=t
         while current_node != s:
@@ -42,7 +42,7 @@ def max_flow(G: nx.Graph, s: str, t: str):
             if (G[parent[current_node]][current_node]['weight']==0):
                 G.remove_edge(current_parent,current_node)
             current_node = current_parent
-    return max_flow
+    return value
 
 
 if __name__ == "__main__":
